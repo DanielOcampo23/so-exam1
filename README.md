@@ -165,7 +165,7 @@ Para poder modificar la tabla con las llamadas al sistema, primero hay que obten
 
 Luego de esto, podemos modificar cualquier puntero almacenado en la tabla con las llamadas al sistema. En este código se puede apreciar cuando se hace una copia del puntero de la función original de open (con el fin de poder volver a su estado original en un futuro) y luego se modifica el arreglo sys_call_table para que la posición __NR_open contenga el puntero a la función nueva que se ha creado, en este caso rickroll_open.
 
-![GitHub Logo0](Images/imagenRickRoll.png)
+![GitHub Logo0](Images/imagenRickRoll2.png)
 
 
 ```asmlinkage long rickroll_open(const char __user *filename, int flags, umode_t mode)```
