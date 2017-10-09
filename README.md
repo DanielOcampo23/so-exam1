@@ -38,7 +38,7 @@ sum=0; while read line; do ((sum=$sum+$line)); done < sum-me.txt; echo $sum
 ```
 Lo que hace esta linea de codigo, es crear una variable temporal "sum=0" después se hace un recorrido sobre esta lista leyendo cada linea de esta lista, y en cada iteración suma lo con que lleva en la variable "sum" con lo que hay en la linea ((sum=$sum+$line)) y a lo ultimo imprime el resultado como muestra la siguiente imagen:
 
- ![GitHub Logo0](Images/Ejercicio1-suma.png)
+ ![GitHub Logo0](Images/Ejercicio1-suma2.png)
  
   * replace_spaces_in_filenames
   
@@ -92,5 +92,16 @@ awk '!a[$0]++' faces.txt
 Este reto consiste en un archivo .txt contiene linea separadas con "," (comma-separated) y nos piden acomodarlo de esta manera como lo muestra en la imagen
 
 ![GitHub Logo0](Images/ejercicio4Descripcion.PNG)
+
+Para esto ejecutamos el siguientes comando, el cual tabula las columnas y reemplazando la coma por los espacios requerimdos 
+
+```
+column -s "," -t table.csv
+```
+
+![GitHub Logo0](Images/ejercicio5.PNG)
+
+
+
 
 https://youtu.be/oAfbTwwPymo
