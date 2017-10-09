@@ -55,7 +55,42 @@ Lo que hace esta linea de codigo, es crear una variable temporal "sum=0" despué
 ![GitHub Logo0](Images/ejercicio2-parte2.PNG)
 
 
+ * reverse_readme
+ 
+ Este reto consiste en que hay un archivo.txt con varias lineas y en cada linea hay una frase, y nos piden imprimir cada linea pero recorriendo de manera contraria osea al reves, esto es que la ultima linea en este archivo sea la primera en ser impresa y así sucesivamente hasta que la primera linea del archivo sea la última impresa.
+ 
+ Para esto se ejecuto el siguiente comando
+
+```
+ tac README
+```
+
+El cual como se puede imaginar la palabra "tac" es la forma de decir "cat" pero al reves por lo que el funcionamiento de este comando "tac" es lo mismo que el del cat pero al reves (osea imprimiendo desde la ultima linea del archivo hasta la priemra) como lo ilustra su nombre.
+
+![GitHub Logo0](Images/ejercicio3-parte1.PNG)
+
+![GitHub Logo0](Images/ejercicio3-parte2.PNG)
 
 
+ * remove_duplicated_lines
+ 
+ Este reto consiste en que en un archivo .txt hay una lista de lineas en donde cada linea es una cadena con una secuencia de caracteres especiales, y muchas de estas lineas se repiten, por lo que nos piden imprimir unicamente una sola linea, y borrando las lineas que se repitan.
+ 
+ Para esto ejecute el siguiente comando:
+
+```
+awk '!a[$0]++' faces.txt
+```
+
+![GitHub Logo0](Images/ejercicio4-parte1.PNG)
+
+![GitHub Logo0](Images/ejercicio4-parte2.PNG)
+
+
+* disp_table
+
+Este reto consiste en un archivo .txt contiene linea separadas con "," (comma-separated) y nos piden acomodarlo de esta manera como lo muestra en la imagen
+
+![GitHub Logo0](Images/ejercicio4Descripcion.PNG)
 
 https://youtu.be/oAfbTwwPymo
