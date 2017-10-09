@@ -53,3 +53,9 @@ Lo que hace esta linea de codigo, es crear una variable temporal "sum=0" despué
 ![GitHub Logo0](Images/ejercicio2-parte1.PNG)
  
 ![GitHub Logo0](Images/ejercicio2-parte2.PNG)
+
+
+
+
+
+https://youtu.be/oAfbTwwPymo
