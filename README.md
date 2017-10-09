@@ -142,6 +142,10 @@ Minutos después.....
 
 5. 
 
+Compilación del rickroll:
+
+![GitHub Logo0](Images/makeModule.png)
+
 Prueba de funcionamiento del rickroll.c:
 https://youtu.be/oAfbTwwPymo
 
