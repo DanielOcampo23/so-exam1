@@ -39,12 +39,12 @@ Si ya existe un libro en el directorio mybooks, debe ser reemplazado
 ### Solución: 
 3.  * sum_all_numbers
 
-Este reto consistia en que habia un archivo .txt con una lista de numeros y nos pedian imprimir la suma de esa lista de numeros para la solución de este reto, ejecute la siguiente linea de código:
+Este reto consistía en que había un archivo .txt con una lista de números y nos pedían imprimir la suma de esa lista de números para la solución de este reto, ejecute la siguiente línea de código:
 
 ```
 sum=0; while read line; do ((sum=$sum+$line)); done < sum-me.txt; echo $sum
 ```
-Lo que hace esta linea de codigo, es crear una variable temporal "sum=0" después se hace un recorrido sobre esta lista leyendo cada linea de esta lista, y en cada iteración suma lo con que lleva en la variable "sum" con lo que hay en la linea ((sum=$sum+$line)) y a lo ultimo imprime el resultado como muestra la siguiente imagen:
+Lo que hace esta línea de código, es crear una variable temporal "sum=0" después se hace un recorrido sobre esta lista leyendo cada línea de esta lista, y en cada iteración suma lo con que lleva en la variable "sum" con lo que hay en la línea ((sum=$sum+$line)) y a lo último imprime el resultado como muestra la siguiente imagen:
 
  ![GitHub Logo0](Images/Ejercicio1-suma2.png)
  
@@ -56,7 +56,7 @@ Lo que hace esta linea de codigo, es crear una variable temporal "sum=0" despué
   ls | sed 's/ /./g'
 ```
 
- Lo que hace "|" es que la salida del comando de la izquierda es entrada para el comando de la derecha, y el "sed" lo que hace es reemplazar dependiendo de los parametros que se le ingresen en los slashs (/)
+ Lo que hace "|" es que la salida del comando de la izquierda es entrada para el comando de la derecha, y el "sed" lo que hace es reemplazar dependiendo de los parámetros que se le ingresen en los slashs (/)
   
 ![GitHub Logo0](Images/ejercicio2-parte1.PNG)
  
@@ -65,15 +65,15 @@ Lo que hace esta linea de codigo, es crear una variable temporal "sum=0" despué
 
  * reverse_readme
  
- Este reto consiste en que hay un archivo.txt con varias lineas y en cada linea hay una frase, y nos piden imprimir cada linea pero recorriendo de manera contraria osea al reves, esto es que la ultima linea en este archivo sea la primera en ser impresa y así sucesivamente hasta que la primera linea del archivo sea la última impresa.
+ Este reto consiste en que hay un archivo.txt con varias líneas y en cada línea hay una frase, y nos piden imprimir cada línea pero recorriendo de manera contraria ósea al revés, esto es que la última línea en este archivo sea la primera en ser impresa y así sucesivamente hasta que la primera línea del archivo sea la última impresa.
  
- Para esto se ejecuto el siguiente comando
+ Para esto se ejecutó el siguiente comando
 
 ```
  tac README
 ```
 
-El cual como se puede imaginar la palabra "tac" es la forma de decir "cat" pero al reves por lo que el funcionamiento de este comando "tac" es lo mismo que el del cat pero al reves (osea imprimiendo desde la ultima linea del archivo hasta la priemra) como lo ilustra su nombre.
+El cual como se puede imaginar la palabra "tac" es la forma de decir "cat" pero al revés por lo que el funcionamiento de este comando "tac" es lo mismo que el del cat pero al reves (ósea imprimiendo desde la última línea del archivo hasta la primera) como lo ilustra su nombre.
 
 ![GitHub Logo0](Images/ejercicio3-parte1.PNG)
 
@@ -82,7 +82,7 @@ El cual como se puede imaginar la palabra "tac" es la forma de decir "cat" pero 
 
  * remove_duplicated_lines
  
- Este reto consiste en que en un archivo .txt hay una lista de lineas en donde cada linea es una cadena con una secuencia de caracteres especiales, y muchas de estas lineas se repiten, por lo que nos piden imprimir unicamente una sola linea, y borrando las lineas que se repitan.
+ Este reto consiste en que en un archivo .txt hay una lista de líneas en donde cada línea es una cadena con una secuencia de caracteres especiales, y muchas de estas líneas se repiten, por lo que nos piden imprimir únicamente una sola línea, y borrando las líneas que se repitan.
  
  Para esto ejecute el siguiente comando:
 
@@ -97,11 +97,11 @@ awk '!a[$0]++' faces.txt
 
 * disp_table
 
-Este reto consiste en un archivo .txt contiene linea separadas con "," (comma-separated) y nos piden acomodarlo de esta manera como lo muestra en la imagen
+Este reto consiste en un archivo .txt contiene línea separadas con "," (comma-separated) y nos piden acomodarlo de esta manera como lo muestra en la imagen
 
 ![GitHub Logo0](Images/ejercicio4Descripcion.PNG)
 
-Para esto ejecutamos el siguientes comando, el cual tabula las columnas y reemplazando la coma por los espacios requerimdos 
+Para esto ejecutamos el siguientes comando, el cual tabula las columnas y reemplazando la coma por los espacios requeridos 
 
 ```
 column -s "," -t table.csv
@@ -121,7 +121,7 @@ Y aquí verificamos como el usuario ya se encuentra en el sistema operativo
 
 ![GitHub Logo0](Images/RevisandoUsuario.png)
 
-Después consultando el manual de crontab, encontré como ejecutar un comando cada cierto periodo de tiempo que uno le determine, para el caso requerido del parcial, se le determinó ejecutarse cada 5 minutos. Ahora por motivos practicos, no crei necesario crear un archivo .sh (script) ya que este nada mas contaba con una sola linea ``` wget -q -O /home/gutenberg/mybooks/996.txt https://www.gutenberg.org/ebooks/996.txt.utf-8 ``` la cual descarga en el directorio especificado en este comando, y además en caso de existir anteriormente se sobreescribirá, por esta razón en el mismo crontab añadí esta linea de codigo en vez de la ejecución del Script.
+Después consultando el manual de crontab, encontré como ejecutar un comando cada cierto periodo de tiempo que uno le determine, para el caso requerido del parcial, se le determinó ejecutarse cada 5 minutos. Ahora por motivos prácticos, no creí necesario crear un archivo .sh (script) ya que este nada más contaba con una sola línea ``` wget -q -O /home/gutenberg/mybooks/996.txt https://www.gutenberg.org/ebooks/996.txt.utf-8 ``` la cual descarga en el directorio especificado en este comando, y además en caso de existir anteriormente se sobrescribirá, por esta razón en el mismo crontab añadí esta línea de código en vez de la ejecución del Script.
 
 Comando:
 
@@ -134,7 +134,7 @@ Prueba de funcionamiento, aquí podemos detallar que en una imagen el libro fue 
 ![GitHub Logo0](Images/crontab1.png)
 
 
-minutos despues.....
+Minutos después.....
 
 
 ![GitHub Logo0](Images/crontab5.png)
@@ -143,4 +143,9 @@ minutos despues.....
 5. 
 
 Prueba de funcionamiento del rickroll.c:
+https://youtu.be/oAfbTwwPymo
+
+
+### Referencias ### 
+
 https://youtu.be/oAfbTwwPymo
