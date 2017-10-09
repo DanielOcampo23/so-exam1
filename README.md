@@ -31,4 +31,25 @@ El primer parcial del curso sistemas operativos trata sobre el manejo de los com
 ### Solución: 
 3.  * sum_all_numbers
 
+Este reto consistia en que habia un archivo .txt con una lista de numeros y nos pedian imprimir la suma de esa lista de numeros para la solución de este reto, ejecute la siguiente linea de código:
 
+```
+sum=0; while read line; do ((sum=$sum+$line)); done < sum-me.txt; echo $sum
+```
+Lo que hace esta linea de codigo, es crear una variable temporal "sum=0" después se hace un recorrido sobre esta lista leyendo cada linea de esta lista, y en cada iteración suma lo con que lleva en la variable "sum" con lo que hay en la linea ((sum=$sum+$line)) y a lo ultimo imprime el resultado como muestra la siguiente imagen:
+
+ ![GitHub Logo0](Images/Ejercicio1-suma.png)
+ 
+  * replace_spaces_in_filenames
+  
+  Este reto consiste en una lista de archivos con nombres de personas separadas con un espacio, y nos piden eliminar ese espacio y reemplazarlo por un punto para esto ejecute la siguiente linea de código:
+  
+```
+  ls | sed 's/ /./g'
+```
+
+ Lo que hace "|" es que la salida del comando de la izquierda es entrada para el comando de la derecha, y el "sed" lo que hace es reemplazar dependiendo de los parametros que se le ingresen en los slashs (/)
+  
+![GitHub Logo0](Images/ejercicio2-parte1.PNG)
+ 
+![GitHub Logo0](Images/ejercicio2-parte2.PNG)
