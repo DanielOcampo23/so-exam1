@@ -151,6 +151,27 @@ Minutos después.....
 
 5. 
 
+El código fuente rickroll.c  (https://github.com/jvns/kernel-module-fun/blob/master/rickroll.c#L10) es un programa hecho en C que al cargarlo como un modulo en el kernel, es capaz de editar las llamadas a las funciones del sistema, en particular la función open, para que cada vez que se abra un archivo con extensión “.mp3” se ejecute la canción “Rick Astley - Never Gonna Give You Up.mp3” en vez de la canción seleccionada por el usuario. A continuación se explica con mas detalle como es posible realizar esto.
+
+Antes de comenzar a explicar su funcionamiento, hay que aclarar que las llamadas al sistema (syscalls), son los mecanismos usados por una aplicación para solicitar un servicio del kernel del sistema operativo. Estos podrían ser servicios relacionados con el hardware (ejemplo, acceder al disco duro), la creación y ejecución de nuevos procesos, el manejo del programador de procesos, etc.
+
+Para poder “engañar” al sistema operativo y modificar las llamadas a las funciones del sistema, el truco se encuentra en modificar la tabla que contiene las llamadas al sistema (sys_call_table), en este arreglo se encuentran los punteros a todos los syscalls, algunos de los mas comunes son open, close, read, write, execve, fork, kill y wait. Este programa particularmente modifica el puntero de la función open que se encuentra almacenado en el arreglo sys_call_table, el cual se reemplaza por el puntero a una nueva función “rickroll_open(const char __user *filename, int flags, umode_t mode)” que realiza el comportamiento que deseamos, en este caso ejecutar siempre la canción “Rick Astley - Never Gonna Give You Up.mp3” cuando cualquier archivo mp3 es seleccionado.
+
+int open(const char *pathname, int flags, mode_t mode);
+
+Open es una función del sistema que es usada para abrir un nuevo archivo y obtener su descriptor.
+
+Para poder modificar la tabla con las llamadas al sistema, primero hay que obtener la referencia en memoria de esta y para esto el programa realiza el siguiente truco (código de la función find_sys_call_table() ): Realiza un recorrido a través del espacio de memoria del kernel y busca la dirección de una de las llamadas al sistema mas conocidas, en este caso sys_close.  Ya que se conoce el offset del puntero de sys_close en la tabla (__NR_close), entonces se puede obtener la dirección base de la tabla sys_call_table.
+
+Luego de esto, podemos modificar cualquier puntero almacenado en la tabla con las llamadas al sistema. En este código se puede apreciar cuando se hace una copia del puntero de la función original de open (con el fin de poder volver a su estado original en un futuro) y luego se modifica el arreglo sys_call_table para que la posición __NR_open contenga el puntero a la función nueva que se ha creado, en este caso rickroll_open.
+
+
+
+asmlinkage long rickroll_open(const char __user *filename, int flags, umode_t mode)
+
+Esta es la función nueva que reemplaza a la función open en la tabla de funciones del sistema, donde contiene los mismos parámetros que open. Cuando esta función se ejecuta, primero valida si el archivo que se pretende abrir termina en la extensión “.mp3”, si es así entonces ejecuta la función open enviándole como parámetro la ruta donde se encuentra el archivo con la canción “Rick Astley - Never Gonna Give You Up.mp3”, de lo contrario ejecuta la función open enviándole como parámetro la ruta del archivo que se envió como parámetro original en esta función rickroll_open
+
+
 Compilación del rickroll:
 
 ![GitHub Logo0](Images/makeModule.png)
