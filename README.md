@@ -125,14 +125,18 @@ Después consultando el manual de crontab, encontré como ejecutar un comando ca
 (crontab -l 2>/dev/null; echo "*/5 * * * * wget -q -O /home/gutenberg/mybooks/996.txt https://www.gutenberg.org/ebooks/996.txt.utf-8") | crontab -
 ```
 
-Prueba de funcionamiento, aquí podemos detallar que en una imagen el libro fue descargado, y a los 5 minutos fue reemplazado
+Prueba de funcionamiento, aquí podemos detallar que en una imagen el libro fue descargado, y a los minutos después como fue reemplazado
 
 ![GitHub Logo0](Images/crontab1.png)
+
+
+minutos despues.....
+
 
 ![GitHub Logo0](Images/crontab5.png)
 
 
 5. 
 
-Prueba de funcionamiento:
+Prueba de funcionamiento del rickroll.c:
 https://youtu.be/oAfbTwwPymo
