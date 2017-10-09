@@ -28,6 +28,14 @@ El primer parcial del curso sistemas operativos trata sobre el manejo de los com
   * remove_duplicated_lines
   * disp_table
 
+4. Realice un script que cumpla las condiciones que se describen a continuación. Presente capturas de pantalla relevantes como evidencias del funcionamiento (30%)
+El usuario gutenberg debe existir en el sistema operativo
+El script se debe ejecutar cada 5 minutos, consulte el manual de crontab
+EL script debe descargar un libro del proyecto https://www.gutenberg.org/ en el directorio /home/gutenberg/mybooks
+Si ya existe un libro en el directorio mybooks, debe ser reemplazado
+
+5. Describa el funcionamiento del código fuente rickroll.c del repositorio de github https://github.com/jvns/kernel-module-fun. Muestre el funcionamiento al compilar el código y cargarlo como un módulo del kernel a través de un video que deberá cargar en Youtube e incluir el enlace en el informe (30%). Se recomienda emplear el sistema operativo Ubuntu con interfaz gráfica para esta prueba.
+
 ### Solución: 
 3.  * sum_all_numbers
 
@@ -104,4 +112,27 @@ column -s "," -t table.csv
 
 
 
+4.
+Para la solución de este punto, se creó un usuario en el sistema operativo con el nombre "gutenberg" como se muestra en la imagen
+
+![GitHub Logo0](Images/AgregandoUsuarioAlSistema.png)
+
+![GitHub Logo0](Images/RevisandoUsuario.png)
+
+Después consultando el manual de crontab, encontré como ejecutar un comando cada cierto periodo de tiempo que uno le determine, para el caso requerido del parcial, se le determinó ejecutarse cada 5 minutos. Ahora por motivos practicos, no crei necesario crear un archivo .sh (script) ya que este nada mas contaba con una sola linea ``` wget -q -O /home/gutenberg/mybooks/996.txt https://www.gutenberg.org/ebooks/996.txt.utf-8 ``` la cual descarga en el directorio especificado en esta linea, y además en caso de existir anteriormente se sobreescribirá 
+
+```
+(crontab -l 2>/dev/null; echo "*/5 * * * * wget -q -O /home/gutenberg/mybooks/996.txt https://www.gutenberg.org/ebooks/996.txt.utf-8") | crontab -
+```
+
+Prueba de funcionamiento, aquí podemos detallar que en una imagen el libro fue descargado, y a los 5 minutos fue reemplazado
+
+![GitHub Logo0](Images/crontab1.png)
+
+![GitHub Logo0](Images/crontab5.png)
+
+
+5. 
+
+Prueba de funcionamiento:
 https://youtu.be/oAfbTwwPymo
