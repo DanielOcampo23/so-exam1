@@ -100,7 +100,7 @@ awk '!a[$0]++' faces.txt
 
 ![GitHub Logo0](Images/ejercicio4-parte2.PNG)
 
-Lo que hace este poderoso comando ``` awk ``` es algo parecido al comando ``` grep ``` y es buscar la palabra que se le envia por parametro dentro de todo el archivo, y retorna la cantidad de veces que encontró esta palabra, para esto el verifica la cantidad de veces que encontró esta palabra y si es mayor a una vez la imprime 
+Lo que hace este poderoso comando ``` awk ``` es algo parecido al comando ``` grep ``` y es buscar la palabra que se le envia por parametro dentro de todo el archivo, y retorna la cantidad de veces que encontró esta palabra, para esto el verifica la cantidad de veces que encontró esta palabra y si la cantidad es mayor a uno, se imprime unicamente esa vez, y de esta manera quitando las lineas duplicadas.
 
 
 
