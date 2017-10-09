@@ -37,7 +37,9 @@ Si ya existe un libro en el directorio mybooks, debe ser reemplazado
 5. Describa el funcionamiento del código fuente rickroll.c del repositorio de github https://github.com/jvns/kernel-module-fun. Muestre el funcionamiento al compilar el código y cargarlo como un módulo del kernel a través de un video que deberá cargar en Youtube e incluir el enlace en el informe (30%). Se recomienda emplear el sistema operativo Ubuntu con interfaz gráfica para esta prueba.
 
 ### Solución: 
-3.  * sum_all_numbers
+3.  
+
+* sum_all_numbers
 
 Este reto consistía en que había un archivo .txt con una lista de números y nos pedían imprimir la suma de esa lista de números para la solución de este reto, ejecute la siguiente línea de código:
 
@@ -63,6 +65,8 @@ Lo que hace esta línea de código, es crear una variable temporal "sum=0" despu
 ![GitHub Logo0](Images/ejercicio2-parte2.PNG)
 
 
+
+
  * reverse_readme
  
  Este reto consiste en que hay un archivo.txt con varias líneas y en cada línea hay una frase, y nos piden imprimir cada línea pero recorriendo de manera contraria ósea al revés, esto es que la última línea en este archivo sea la primera en ser impresa y así sucesivamente hasta que la primera línea del archivo sea la última impresa.
@@ -80,6 +84,8 @@ El cual como se puede imaginar la palabra "tac" es la forma de decir "cat" pero 
 ![GitHub Logo0](Images/ejercicio3-parte2.PNG)
 
 
+
+
  * remove_duplicated_lines
  
  Este reto consiste en que en un archivo .txt hay una lista de líneas en donde cada línea es una cadena con una secuencia de caracteres especiales, y muchas de estas líneas se repiten, por lo que nos piden imprimir únicamente una sola línea, y borrando las líneas que se repitan.
@@ -93,6 +99,9 @@ awk '!a[$0]++' faces.txt
 ![GitHub Logo0](Images/ejercicio4-parte1.PNG)
 
 ![GitHub Logo0](Images/ejercicio4-parte2.PNG)
+
+Lo que hace este poderoso comando ``` awk ``` es algo parecido al comando ``` grep ``` y es buscar la palabra que se le envia por parametro dentro de todo el archivo, y retorna la cantidad de veces que encontró esta palabra, para esto el verifica la cantidad de veces que encontró esta palabra y si es mayor a una vez la imprime 
+
 
 
 * disp_table
