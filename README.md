@@ -119,13 +119,15 @@ Para la solución de este punto, se creó un usuario en el sistema operativo con
 
 ![GitHub Logo0](Images/RevisandoUsuario.png)
 
-Después consultando el manual de crontab, encontré como ejecutar un comando cada cierto periodo de tiempo que uno le determine, para el caso requerido del parcial, se le determinó ejecutarse cada 5 minutos. Ahora por motivos practicos, no crei necesario crear un archivo .sh (script) ya que este nada mas contaba con una sola linea ``` wget -q -O /home/gutenberg/mybooks/996.txt https://www.gutenberg.org/ebooks/996.txt.utf-8 ``` la cual descarga en el directorio especificado en esta linea, y además en caso de existir anteriormente se sobreescribirá 
+Después consultando el manual de crontab, encontré como ejecutar un comando cada cierto periodo de tiempo que uno le determine, para el caso requerido del parcial, se le determinó ejecutarse cada 5 minutos. Ahora por motivos practicos, no crei necesario crear un archivo .sh (script) ya que este nada mas contaba con una sola linea ``` wget -q -O /home/gutenberg/mybooks/996.txt https://www.gutenberg.org/ebooks/996.txt.utf-8 ``` la cual descarga en el directorio especificado en esta linea, y además en caso de existir anteriormente se sobreescribirá, por esta razón en el mismo crontab añadí esta linea de codigo en vez de la ejecución del Script.
+
+Comando:
 
 ```
 (crontab -l 2>/dev/null; echo "*/5 * * * * wget -q -O /home/gutenberg/mybooks/996.txt https://www.gutenberg.org/ebooks/996.txt.utf-8") | crontab -
 ```
 
-Prueba de funcionamiento, aquí podemos detallar que en una imagen el libro fue descargado, y a los minutos después como fue reemplazado
+Prueba de funcionamiento, aquí podemos detallar que en una imagen el libro fue descargado, y a los 5, 10 y 15 minutos después como fue descargado y reemplazado ya que existía anteriormente
 
 ![GitHub Logo0](Images/crontab1.png)
 
